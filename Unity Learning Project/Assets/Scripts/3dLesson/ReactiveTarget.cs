@@ -5,6 +5,9 @@ public class ReactiveTarget : MonoBehaviour {
 
     public void ReactToHit()
     {
+        WanderingAI behavior = GetComponent<WanderingAI>();
+        if (behavior != null)
+            behavior.setAlive(false);
         StartCoroutine(Die());
 
     }
